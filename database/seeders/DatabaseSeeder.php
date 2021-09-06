@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->count(3)->create()->each(function($user){
             $user->questions()
                 ->saveMany(
-                    Question::factory()->count(3)->make()
+                    Question::factory()->count(rand(1, 3))->make()
                 );
         });
     }
