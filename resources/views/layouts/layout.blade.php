@@ -15,14 +15,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" sizes="16x16" href="{{ asset('images/favicon.png') }}">
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/line-awesome.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/line-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-te-1.4.0.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/selectize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- end inject -->
 </head>
 <body>
@@ -40,7 +42,7 @@
         <div class="row align-items-center">
             <div class="col-lg-2">
                 <div class="logo-box">
-                    <a href="index.html" class="logo"><img src="images/logo-black.png" alt="logo"></a>
+                    <a href="index.html" class="logo"><img src="{{ asset('images/logo-black.png') }}" alt="logo"></a>
                     <div class="user-action">
                         <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-toggle="tooltip" data-placement="top" title="Search">
                             <i class="la la-search"></i>
@@ -267,7 +269,7 @@
         <div class="row align-items-center pb-4 copyright-wrap">
             <div class="col-lg-6">
                 <a href="index.html" class="d-inline-block">
-                    <img src="images/logo-white.png" alt="footer logo" class="footer-logo">
+                    <img src="{{ asset('images/logo-white.png') }}" alt="footer logo" class="footer-logo">
                 </a>
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">
@@ -279,10 +281,13 @@
 <div id="back-to-top" data-toggle="tooltip" data-placement="top" title="Return to top">
     <i class="la la-arrow-up"></i>
 </div>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/jquery-te-1.4.0.min.js') }}"></script>
+<script src="{{ asset('js/selectize.min.js') }}"></script>
+<script src="{{ asset('js/jquery.multi-file.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 <!-- Mirrored from techydevs.com/demos/themes/html/disilab-demo/disilab/questions-full-width.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 10:58:43 GMT -->
