@@ -20,9 +20,10 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card card-item">
-                        <form method="post" action="{{ route('questions.store') }}" class="card-body">
+                        <form action="{{ route('questions.update', $question->id) }}" method="post" class="card-body">
                             @csrf
-                            @include('questions.__form', ['button_text' => 'Publish Your Question'])
+                            <input type="hidden" name="_method" value="PUT">
+                            @include('questions.__form', ['button_text' => 'Save Changes'])
                         </form>
                     </div><!-- end card -->
                 </div><!-- end col-lg-8 -->

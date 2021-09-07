@@ -34,10 +34,15 @@ class Question extends Model
         return '#';
     }
 
+    public function getEditUrlAttribute()
+    {
+        return route('questions.edit', $this->id);
+    }
+
     public function getAnswerStatusAttribute()
     {
-        if($this->answers>0){
-            if($this->best_answer_id!=null){
+        if ($this->answers > 0) {
+            if ($this->best_answer_id != null) {
                 return "answered-accepted";
             }
             return 'answered';
