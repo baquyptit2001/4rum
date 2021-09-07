@@ -22,4 +22,25 @@ class Question extends Model
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
+
+    public function getCreatedDateAttribute()
+    {
+        return $this->created_at->shortRelativeDiffForHumans();
+    }
+
+    public function getUrlAttribute()
+    {
+        // return route('questions.show', $this->id);
+        return '#';
+    }
+
+    public function getAnswerStatusAttribute()
+    {
+        if($this->answers>0){
+            if($this->best_answer_id!=null){
+                return "answered-accepted";
+            }
+            return 'answered';
+        }
+    }
 }
