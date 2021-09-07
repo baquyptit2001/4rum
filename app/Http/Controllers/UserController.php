@@ -44,6 +44,17 @@ class UserController extends Controller
         }
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('user.login.page');
+    }
+
+    public function signup()
+    {
+        return view('users.signup');
+    }
+
     /**
      * Display the specified resource.
      *

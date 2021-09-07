@@ -12,7 +12,7 @@
                         <a href="{{ route('questions.create') }}" class="btn theme-btn theme-btn-sm">Ask Question</a>
                     </div>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <p class="pt-1 fs-15 fw-medium lh-20">21,287 questions</p>
+                        <p class="pt-1 fs-15 fw-medium lh-20">{{ number_format($question_count).' '.str_plural('question', $question_count) }}</p>
                         <div class="filter-option-box w-10">
                             <select class="custom-select">
                                 <option value="newest" selected="selected">Newest </option>
@@ -69,6 +69,9 @@
                                         <small class="meta d-block text-right">
                                             <span class="text-black d-block lh-18">asked</span>
                                             <span class="d-block lh-18 fs-12">{{ $question->created_date }}</span>
+                                            @if (auth()->id() == $question->user_id)
+                                                <span class="text-black d-block lh-18"><a href="{{ $question->edit_url }}">edit</a></span> 
+                                            @endif
                                         </small>
                                     </div>
                                 </div>
@@ -174,7 +177,6 @@
                             {{ $questions->links("pagination::bootstrap-4") }}
                         </ul>
                     </nav>
-                    <p class="fs-13 pt-2">Showing 1-10 results of 50,577 questions</p>
                 </div>
             </div><!-- end question-main-bar -->
         </div><!-- end container -->

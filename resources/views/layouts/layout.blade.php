@@ -138,10 +138,22 @@
                             <button class="form-btn" type="button"><i class="la la-search"></i></button>
                         </div>
                     </form>
-                    <div class="nav-right-button">
-                        <a href="login.html" class="btn theme-btn theme-btn-sm theme-btn-outline mr-1">Log in</a>
-                        <a href="signup.html" class="btn theme-btn theme-btn-sm">Sign up</a>
-                    </div><!-- end nav-right-button -->
+                    @if (auth()->check())
+                        <div class="dropdown">
+                            <button class="btn theme-btn theme-btn-sm theme-btn-outline mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ auth()->user()->name }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Account</a>
+                            <a class="dropdown-item" href="{{ route('user.logout') }}">Logout</a>
+                            </div>
+                        </div>
+                    @else
+                        <div class="nav-right-button">
+                            <a href="{{ route('user.login.page') }}" class="btn theme-btn theme-btn-sm theme-btn-outline mr-1">Log in</a>
+                            <a href="{{ route('user.signup.page') }}" class="btn theme-btn theme-btn-sm">Sign up</a>
+                        </div>
+                    @endif
                 </div><!-- end menu-wrapper -->
             </div><!-- end col-lg-10 -->
         </div><!-- end row -->

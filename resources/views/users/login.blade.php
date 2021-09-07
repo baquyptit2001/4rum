@@ -67,7 +67,7 @@
                     </div><!-- end col-lg-5 -->
                 </div><!-- end row -->
             </form>
-            <p class="text-black text-center fs-15">Don't have an account? <a href="signup.html" class="text-color hover-underline">Sign up</a></p>
+            <p class="text-black text-center fs-15">Don't have an account? <a href="{{ route('user.signup.page') }}" class="text-color hover-underline">Sign up</a></p>
         </div><!-- end container -->
     </section>
 @endsection
