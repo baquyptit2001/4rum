@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\UserController;
 use App\Models\Question;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('users')->group(function () {
+    Route::get('/login', [UserController::class, 'index'])->name('user.login.page')->middleware('guest');
+    Route::post('/login', [UserController::class, 'login'])->name('user.login');
 });
 
 Route::resource('questions', QuestionController::class);

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AskQuestionRequest;
-use App\Models\Question;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class QuestionController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::with('user')->latest()->paginate(5);
-
-        return view('questions.index', compact('questions'));
+        return view('users.login');
     }
 
     /**
@@ -27,7 +25,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('questions.create');
+        //
     }
 
     /**
@@ -36,19 +34,23 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AskQuestionRequest $request)
+    public function login(Request $request)
     {
-        $request->user()->questions()->create($request->only('title', 'body'));
-        return redirect()->route('questions.index')->with('Success', 'Your question has been submitted');
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('questions.index');
+        } else {
+            return redirect()->route('user.login.page')->with('login_not_success', 'Đăng nhập thất bại !!');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Question  $question
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show(User $user)
     {
         //
     }
@@ -56,10 +58,10 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Question  $question
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit(User $user)
     {
         //
     }
@@ -68,10 +70,10 @@ class QuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Question  $question
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -79,10 +81,10 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Question  $question
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy(User $user)
     {
         //
     }

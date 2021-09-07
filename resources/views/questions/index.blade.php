@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('layouts.layout')
 
 
 @section('content')
@@ -9,7 +9,7 @@
                 <div class="filters pb-4">
                     <div class="d-flex flex-wrap align-items-center justify-content-between pb-3">
                         <h3 class="fs-22 fw-medium">All Questions</h3>
-                        <a href="ask-question.html" class="btn theme-btn theme-btn-sm">Ask Question</a>
+                        <a href="{{ route('questions.create') }}" class="btn theme-btn theme-btn-sm">Ask Question</a>
                     </div>
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
                         <p class="pt-1 fs-15 fw-medium lh-20">21,287 questions</p>
@@ -25,6 +25,7 @@
                         </div>
                     </div>
                 </div>
+                @include('layouts.__message')
                 <div class="questions-snippet border-top border-top-gray">
                     @foreach ($questions as $question)
                         <div class="media media-card rounded-0 shadow-none mb-0 bg-transparent p-3 border-bottom border-bottom-gray">
