@@ -3,7 +3,8 @@
 @section('content')
     <section class="sign-up-area pt-80px pb-80px position-relative">
         <div class="container">
-            <form action="#" class="card card-item">
+            <form class="card card-item" method="POST">
+                @csrf
                 <div class="card-body row p-0">
                     <div class="col-lg-6">
                         <div class="form-content py-4 pr-60px pl-60px border-right border-right-gray h-100 d-flex align-items-center justify-content-center">
@@ -19,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="fs-14 text-black fw-medium lh-18">Display name</label>
-                                <input type="email" name="email" class="form-control form--control" placeholder="Enter name">
+                                <input type="text" name="name" class="form-control form--control" placeholder="Enter name">
                             </div><!-- end form-group -->
                             <div class="form-group">
                                 <label class="fs-14 text-black fw-medium lh-18">Email</label>
