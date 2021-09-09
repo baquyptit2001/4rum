@@ -28,10 +28,14 @@ class Question extends Model
         return $this->created_at->shortRelativeDiffForHumans();
     }
 
+    public function getCreatedDateFullAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
     public function getUrlAttribute()
     {
-        // return route('questions.show', $this->id);
-        return '#';
+        return route('questions.show', $this->id);
     }
 
     public function getEditUrlAttribute()

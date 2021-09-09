@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <h5 class="mb-2 fw-medium"><a href="question-details.html">{{ $question->title }}</a></h5>
+                                <h5 class="mb-2 fw-medium"><a href="{{ $question->url }}">{{ $question->title }}</a></h5>
                                 <p class="mb-2 truncate lh-20 fs-15">{{ str_limit($question->body, 250) }}</p>
                                 <div class="tags">
                                     <a href="#" class="tag-link">javascript</a>
@@ -70,7 +70,12 @@
                                             <span class="text-black d-block lh-18">asked</span>
                                             <span class="d-block lh-18 fs-12">{{ $question->created_date }}</span>
                                             @if (auth()->id() == $question->user_id)
-                                                <span class="text-black d-block lh-18"><a href="{{ $question->edit_url }}">edit</a></span> 
+                                                <span class="text-black lh-18"><a href="{{ $question->edit_url }}">edit</a></span> 
+                                                <form id="submitAnchor" action="{{ route('questions.destroy', $question->id) }}" method="post">
+                                                    <span class="lh-18"><a href="#" onclick="deleteSubmit()" class="text-danger">delete</a></span> 
+                                                    @csrf
+                                                    @method('delete')
+                                                </form>
                                             @endif
                                         </small>
                                     </div>

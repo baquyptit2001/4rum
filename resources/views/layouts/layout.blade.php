@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('css/jquery-te-1.4.0.css') }}">
     <link rel="stylesheet" href="{{ asset('css/selectize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/upvotejs.min.css') }}">
+    @livewireStyles
     <!-- end inject -->
 </head>
 <body>
@@ -297,9 +299,17 @@
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery-te-1.4.0.min.js') }}"></script>
+<script src="{{ asset('js/upvote.vanilla.js') }}"></script>
+<script src="{{ asset('js/upvote-script.js') }}"></script>
 <script src="{{ asset('js/selectize.min.js') }}"></script>
 <script src="{{ asset('js/jquery.multi-file.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
+<script>
+    function deleteSubmit() {
+        document.getElementById("submitAnchor").submit();
+    }
+</script>
+@livewireScripts
 </body>
 
 <!-- Mirrored from techydevs.com/demos/themes/html/disilab-demo/disilab/questions-full-width.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Sep 2021 10:58:43 GMT -->
