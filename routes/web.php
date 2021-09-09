@@ -28,4 +28,7 @@ Route::prefix('users')->group(function () {
     Route::post('/signup', [UserController::class, 'signup'])->name('user.signup.page')->middleware('guest');
 });
 
-Route::resource('questions', QuestionController::class);
+Route::resource('questions', QuestionController::class,['except' => [
+    'show'
+]]);
+Route::get('/questions/{slug}', [QuestionController::class, 'show'])->name('questions.show');

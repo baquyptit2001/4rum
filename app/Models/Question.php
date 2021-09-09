@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Answer;
+use Illuminate\Mail\Markdown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -35,7 +37,7 @@ class Question extends Model
 
     public function getUrlAttribute()
     {
-        return route('questions.show', $this->id);
+        return route('questions.show', $this->slug);
     }
 
     public function getEditUrlAttribute()
@@ -51,5 +53,23 @@ class Question extends Model
             }
             return 'answered';
         }
+    }
+
+    public function getBodyHtmlAttribute()
+    {
+        return \Parsedown::instance()->text($this->body);
+    }
+
+    public function getBodySumAttribute()
+    {
+        return Markdown::parse($this->body);
+        return \Parsedown::instance()
+        ->setMarkupEscaped(true)
+        ->text($this->body);
+    }
+
+    public function answer()
+    {
+        return $this->hasMany(Answer::class);
     }
 }

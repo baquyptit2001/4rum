@@ -35,8 +35,8 @@
                                     <span class="vote-text d-block fs-13 lh-18">{{ str_plural('vote', $question->votes) }}</span>
                                 </div>
                                 <div class="answer-block {{ $question->answer_status }} my-2">
-                                    <span class="answer-counts d-block lh-20 fw-medium">{{ $question->answers }}</span>
-                                    <span class="answer-text d-block fs-13 lh-18">{{ str_plural('answer', $question->answers) }}</span>
+                                    <span class="answer-counts d-block lh-20 fw-medium">{{ $question->answers_count }}</span>
+                                    <span class="answer-text d-block fs-13 lh-18">{{ str_plural('answer', $question->answers_count) }}</span>
                                 </div>
                                 <div class="view-block">
                                     <span class="view-counts d-block lh-20 fw-medium">{{ $question->views }}</span>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="media-body">
                                 <h5 class="mb-2 fw-medium"><a href="{{ $question->url }}">{{ $question->title }}</a></h5>
-                                <p class="mb-2 truncate lh-20 fs-15">{{ str_limit($question->body, 250) }}</p>
+                                <p class="mb-2 truncate lh-20 fs-15">{!! str_limit($question->body_sum, 250) !!}</p>
                                 <div class="tags">
                                     <a href="#" class="tag-link">javascript</a>
                                     <a href="#" class="tag-link">bootstrap-4</a>
