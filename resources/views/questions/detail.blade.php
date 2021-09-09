@@ -65,6 +65,10 @@
                                         <span class="text-black">{{ $question->created_date_full }}</span>
                                     </div>
                                     <div class="pr-3">
+                                        <span>By</span>
+                                        <span class="text-black">{{ $question->user->name }}</span>
+                                    </div>
+                                    <div class="pr-3">
                                         <span class="pr-1">Viewed</span>
                                         <span class="text-black">{{ $question->views.' '.str_plural('view', $question->views) }}</span>
                                     </div>
@@ -83,7 +87,7 @@
                         </div><!-- end votes -->
                         <div class="question-post-body-wrap flex-grow-1">
                             <div class="question-post-body">
-                                {{ $question->body }}
+                                {!! $question->body_html !!}
                             </div><!-- end question-post-body -->
                             <div class="question-post-user-action">
                                 <div class="post-menu">

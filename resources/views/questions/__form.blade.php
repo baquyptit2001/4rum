@@ -15,7 +15,7 @@
         <p class="fs-13 pb-3 lh-20 text-danger">{{ $errors->first('body') }}</p>
     @endif
     <div class="form-group">
-        <textarea class="form-control form--control" name="body" rows="10" cols="40" placeholder="How to build a snowman ?">{{ isset($question->body) ? $question->body : null }}</textarea>
+        <textarea class="form-control form--control user-text-editor" name="body" rows="10" cols="40" placeholder="How to build a snowman ?">{{ isset($question->body) ? $question->body : null }}</textarea>
     </div>
 </div>
 <div class="input-box pt-2">
