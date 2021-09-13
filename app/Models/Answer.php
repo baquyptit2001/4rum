@@ -14,8 +14,20 @@ class Answer extends Model
         return \Parsedown::instance()->text($this->body);
     }
 
+    public function getCreatedDateFullAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getAcceptedAnswerAttribute()
+    {
+        if($this->answer_accepted){
+            return " star-on";
+        }
     }
 }

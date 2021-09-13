@@ -44,7 +44,7 @@
             </div><!-- end col-lg-9 -->
             <div class="col-lg-3">
                 <div class="hero-btn-box text-right py-3">
-                    <a href="ask-question.html" class="btn theme-btn">Ask a Question</a>
+                    <a href="{{ route('questions.create') }}" class="btn theme-btn">Ask a Question</a>
                 </div>
             </div>
         </div><!-- end row -->
@@ -360,231 +360,224 @@
                             </div>
                         </div><!-- end subheader-actions -->
                     </div><!-- end subheader -->
-                    <div class="answer-wrap d-flex">
-                        <div class="votes votes-styled w-auto">
-                            <div id="vote2" class="upvotejs">
-                                <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right"
-                                    title="This question is useful"></a>
-                                <span class="count">2</span>
-                                <a class="downvote" data-toggle="tooltip" data-placement="right"
-                                    title="This question is not useful"></a>
-                                <a class="star check star-on" data-toggle="tooltip" data-placement="right"
-                                    title="The question owner accepted this answer"></a>
-                            </div>
-                        </div>
-                        <div class="answer-body-wrap flex-grow-1">
-                            <div class="answer-body">
-                                <!-- answer -->
-                            </div><!-- end answer-body -->
-                            <div class="question-post-user-action">
-                                <div class="post-menu">
-                                    <div class="btn-group">
-                                        <button class="btn dropdown-toggle after-none" type="button"
-                                            id="shareDropdownMenuTwo" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">Share</button>
-                                        <div class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2"
-                                            aria-labelledby="shareDropdownMenuTwo">
-                                            <div class="py-3 px-4">
-                                                <h4 class="fs-15 pb-2">Share a link to this question</h4>
-                                                <form action="#" class="copy-to-clipboard">
-                                                    <span class="text-success-message">Link Copied!</span>
-                                                    <input type="text"
-                                                        class="form-control form--control form-control-sm copy-input"
-                                                        value="https://disilab.com/q/66552850/15319675">
-                                                    <div
-                                                        class="btn-box pt-2 d-flex align-items-center justify-content-between">
-                                                        <a href="#" class="btn-text copy-btn">Copy link</a>
-                                                        <ul class="social-icons social-icons-sm">
-                                                            <li><a href="#" class="bg-8 text-white shadow-none"
-                                                                    title="Share link to this question on Facebook"><i
-                                                                        class="la la-facebook"></i></a></li>
-                                                            <li><a href="#" class="bg-9 text-white shadow-none"
-                                                                    title="Share link to this question on Twitter"><i
-                                                                        class="la la-twitter"></i></a></li>
-                                                            <li><a href="#" class="bg-dark text-white shadow-none"
-                                                                    title="Share link to this question on DEV"><i
-                                                                        class="lab la-dev"></i></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div><!-- btn-group -->
-                                    <a href="#" class="btn">Edit</a>
-                                    <button class="btn">Follow</button>
-                                </div><!-- end post-menu -->
-                                <div class="media media-card user-media align-items-center">
-                                    <a href="user-profile.html" class="media-img d-block">
-                                        <img src="{{ asset('images/img4.jpg') }}" alt="avatar">
-                                    </a>
-                                    <div class="media-body d-flex align-items-center justify-content-between">
-                                        <div>
-                                            <h5 class="pb-1"><a href="user-profile.html">Majed Badawi</a></h5>
-                                            <div class="stats fs-12 d-flex align-items-center lh-18">
-                                                <span class="text-black pr-2">15.5k</span>
-                                                <span class="pr-2 d-inline-flex align-items-center"><span
-                                                        class="ball gold"></span>3</span>
-                                                <span class="pr-2 d-inline-flex align-items-center"><span
-                                                        class="ball silver"></span>10</span>
-                                                <span class="pr-2 d-inline-flex align-items-center"><span
-                                                        class="ball"></span>26</span>
-                                            </div>
-                                        </div>
-                                        <small class="meta d-block text-right">
-                                            <span class="text-black d-block lh-18">answered</span>
-                                            <span class="d-block lh-18 fs-12">8 hours ago</span>
-                                        </small>
-                                    </div>
-                                </div><!-- end media -->
-                                <div class="media media-card user-media align-items-center">
-                                    <div class="media-body d-flex align-items-center justify-content-end">
-                                        <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
-                                            <span class="d-block lh-18">edited</span>
-                                            <span class="d-block lh-18 fs-12">8 hours ago</span>
-                                        </a>
-                                    </div>
-                                </div><!-- end media -->
-                            </div><!-- end question-post-user-action -->
-                            <div class="comments-wrap">
-                                <ul class="comments-list">
-                                    <li>
-                                        <div class="comment-actions">
-                                            <span class="comment-score">1</span>
-                                        </div>
-                                        <div class="comment-body">
-                                            <span class="comment-copy">Ah excellent! Thank you!</span>
-                                            <span class="comment-separated">-</span>
-                                            <a href="user-profile.html" class="comment-user owner"
-                                                title="224,110 reputation">Arden Smith</a>
-                                            <span class="comment-separated">-</span>
-                                            <a href="#" class="comment-date">8 hours ago</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="comment-form">
-                                    <div class="comment-link-wrap text-center">
-                                        <a class="collapse-btn comment-link" data-toggle="collapse"
-                                            href="#addCommentCollapseTwo" role="button" aria-expanded="false"
-                                            aria-controls="addCommentCollapseTwo"
-                                            title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
-                                            a comment</a>
-                                    </div>
-                                    <div class="collapse border-top border-top-gray mt-2 pt-3"
-                                        id="addCommentCollapseTwo">
-                                        <form method="post" class="row pb-3">
-                                            <div class="col-lg-12">
-                                                <h4 class="fs-16 pb-2">Leave a Comment</h4>
-                                                <div class="divider mb-2"><span></span></div>
-                                            </div><!-- end col-lg-12 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Name</label>
-                                                    <div class="form-group">
-                                                        <input
-                                                            class="form-control form--control form-control-sm fs-13"
-                                                            type="text" name="text" placeholder="Your name">
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Email (Address never made
-                                                        public)</label>
-                                                    <div class="form-group">
-                                                        <input
-                                                            class="form-control form--control form-control-sm fs-13"
-                                                            type="text" name="text" placeholder="Your email">
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-12">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Website</label>
-                                                    <div class="form-group">
-                                                        <input
-                                                            class="form-control form--control form-control-sm fs-13"
-                                                            type="text" name="text" placeholder="Website link">
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-12 -->
-                                            <div class="col-lg-12">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Message</label>
-                                                    <div class="form-group">
-                                                        <textarea
-                                                            class="form-control form--control form-control-sm fs-13"
-                                                            name="message" rows="5"
-                                                            placeholder="Your comment here..."></textarea>
-                                                        <div class="d-flex flex-wrap align-items-center pt-2">
-                                                            <div
-                                                                class="badge bg-gray border border-gray mr-3 fw-regular fs-13">
-                                                                [named hyperlinks] (https://example.com)</div>
-                                                            <div class="mr-3 fw-bold fs-13">**bold**</div>
-                                                            <div class="mr-3 font-italic fs-13">_italic_</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-12 -->
-                                            <div class="col-lg-12">
-                                                <div
-                                                    class="input-box d-flex flex-wrap align-items-center justify-content-between">
-                                                    <div>
-                                                        <div class="custom-control custom-checkbox fs-13">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="getNewCommentsTwo">
-                                                            <label
-                                                                class="custom-control-label custom--control-label"
-                                                                for="getNewCommentsTwo">Notify me of new comments
-                                                                vai email.</label>
-                                                        </div>
-                                                        <div class="custom-control custom-checkbox fs-13">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                id="getNewPostsTwo">
-                                                            <label
-                                                                class="custom-control-label custom--control-label"
-                                                                for="getNewPostsTwo">Notify me of new posts vai
-                                                                email.</label>
-                                                        </div>
-                                                    </div>
-                                                    <button
-                                                        class="btn theme-btn theme-btn-sm theme-btn-outline theme-btn-outline-gray"
-                                                        type="submit">Post Comment</button>
-                                                </div>
-                                            </div><!-- end col-lg-12 -->
-                                        </form>
-                                    </div><!-- end collapse -->
+                    @foreach ($question->answer as $answer)
+                        <div class="answer-wrap d-flex">
+                            <div class="votes votes-styled w-auto">
+                                <div id="vote2" class="upvotejs">
+                                    <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right"
+                                        title="This question is useful"></a>
+                                    <span class="count">{{ $answer->votes_count }}</span>
+                                    <a class="downvote" data-toggle="tooltip" data-placement="right"
+                                        title="This question is not useful"></a>
+                                    <a class="star check{{ $answer->accepted_answer }}" data-toggle="tooltip" data-placement="right"
+                                        title="The question owner accepted this answer"></a>
                                 </div>
-                            </div><!-- end comments-wrap -->
-                        </div><!-- end answer-body-wrap -->
-                    </div><!-- end answer-wrap -->
+                            </div>
+                            <div class="answer-body-wrap flex-grow-1">
+                                <div class="answer-body">
+                                    {!! $answer->body_html !!}
+                                </div><!-- end answer-body -->
+                                <div class="question-post-user-action">
+                                    <div class="post-menu">
+                                        <div class="btn-group">
+                                            <button class="btn dropdown-toggle after-none" type="button"
+                                                id="shareDropdownMenuTwo" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Share</button>
+                                            <div class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2"
+                                                aria-labelledby="shareDropdownMenuTwo">
+                                                <div class="py-3 px-4">
+                                                    <h4 class="fs-15 pb-2">Share a link to this question</h4>
+                                                    <form action="#" class="copy-to-clipboard">
+                                                        <span class="text-success-message">Link Copied!</span>
+                                                        <input type="text"
+                                                            class="form-control form--control form-control-sm copy-input"
+                                                            value="https://disilab.com/q/66552850/15319675">
+                                                        <div
+                                                            class="btn-box pt-2 d-flex align-items-center justify-content-between">
+                                                            <a href="#" class="btn-text copy-btn">Copy link</a>
+                                                            <ul class="social-icons social-icons-sm">
+                                                                <li><a href="#" class="bg-8 text-white shadow-none"
+                                                                        title="Share link to this question on Facebook"><i
+                                                                            class="la la-facebook"></i></a></li>
+                                                                <li><a href="#" class="bg-9 text-white shadow-none"
+                                                                        title="Share link to this question on Twitter"><i
+                                                                            class="la la-twitter"></i></a></li>
+                                                                <li><a href="#" class="bg-dark text-white shadow-none"
+                                                                        title="Share link to this question on DEV"><i
+                                                                            class="lab la-dev"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div><!-- btn-group -->
+                                        <a href="#" class="btn">Edit</a>
+                                        <button class="btn">Follow</button>
+                                    </div><!-- end post-menu -->
+                                    <div class="media media-card user-media align-items-center">
+                                        <a href="user-profile.html" class="media-img d-block">
+                                            <img src="{{ asset('images/img4.jpg') }}" alt="avatar">
+                                        </a>
+                                        <div class="media-body d-flex align-items-center justify-content-between">
+                                            <div>
+                                                <h5 class="pb-1"><a href="user-profile.html">{{ $answer->user->name }}</a></h5>
+                                                <div class="stats fs-12 d-flex align-items-center lh-18">
+                                                    <span class="text-black pr-2">15.5k</span>
+                                                    <span class="pr-2 d-inline-flex align-items-center"><span
+                                                            class="ball gold"></span>3</span>
+                                                    <span class="pr-2 d-inline-flex align-items-center"><span
+                                                            class="ball silver"></span>10</span>
+                                                    <span class="pr-2 d-inline-flex align-items-center"><span
+                                                            class="ball"></span>26</span>
+                                                </div>
+                                            </div>
+                                            <small class="meta d-block text-right">
+                                                <span class="text-black d-block lh-18">answered</span>
+                                                <span class="d-block lh-18 fs-12">{{ $answer->created_date_full }}</span>
+                                            </small>
+                                        </div>
+                                    </div><!-- end media -->
+                                    <div class="media media-card user-media align-items-center">
+                                        <div class="media-body d-flex align-items-center justify-content-end">
+                                            <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
+                                                <span class="d-block lh-18">edited</span>
+                                                <span class="d-block lh-18 fs-12">8 hours ago</span>
+                                            </a>
+                                        </div>
+                                    </div><!-- end media -->
+                                </div><!-- end question-post-user-action -->
+                                <div class="comments-wrap">
+                                    <ul class="comments-list">
+                                        <li>
+                                            <div class="comment-actions">
+                                                <span class="comment-score">1</span>
+                                            </div>
+                                            <div class="comment-body">
+                                                <span class="comment-copy">Ah excellent! Thank you!</span>
+                                                <span class="comment-separated">-</span>
+                                                <a href="user-profile.html" class="comment-user owner"
+                                                    title="224,110 reputation">Arden Smith</a>
+                                                <span class="comment-separated">-</span>
+                                                <a href="#" class="comment-date">8 hours ago</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="comment-form">
+                                        <div class="comment-link-wrap text-center">
+                                            <a class="collapse-btn comment-link" data-toggle="collapse"
+                                                href="#addCommentCollapseTwo" role="button" aria-expanded="false"
+                                                aria-controls="addCommentCollapseTwo"
+                                                title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
+                                                a comment</a>
+                                        </div>
+                                        <div class="collapse border-top border-top-gray mt-2 pt-3"
+                                            id="addCommentCollapseTwo">
+                                            <form method="post" class="row pb-3">
+                                                <div class="col-lg-12">
+                                                    <h4 class="fs-16 pb-2">Leave a Comment</h4>
+                                                    <div class="divider mb-2"><span></span></div>
+                                                </div><!-- end col-lg-12 -->
+                                                <div class="col-lg-6">
+                                                    <div class="input-box">
+                                                        <label class="fs-13 text-black lh-20">Name</label>
+                                                        <div class="form-group">
+                                                            <input
+                                                                class="form-control form--control form-control-sm fs-13"
+                                                                type="text" name="text" placeholder="Your name">
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="col-lg-6">
+                                                    <div class="input-box">
+                                                        <label class="fs-13 text-black lh-20">Email (Address never made
+                                                            public)</label>
+                                                        <div class="form-group">
+                                                            <input
+                                                                class="form-control form--control form-control-sm fs-13"
+                                                                type="text" name="text" placeholder="Your email">
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="col-lg-12">
+                                                    <div class="input-box">
+                                                        <label class="fs-13 text-black lh-20">Website</label>
+                                                        <div class="form-group">
+                                                            <input
+                                                                class="form-control form--control form-control-sm fs-13"
+                                                                type="text" name="text" placeholder="Website link">
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-12 -->
+                                                <div class="col-lg-12">
+                                                    <div class="input-box">
+                                                        <label class="fs-13 text-black lh-20">Message</label>
+                                                        <div class="form-group">
+                                                            <textarea
+                                                                class="form-control form--control form-control-sm fs-13"
+                                                                name="message" rows="5"
+                                                                placeholder="Your comment here..."></textarea>
+                                                            <div class="d-flex flex-wrap align-items-center pt-2">
+                                                                <div
+                                                                    class="badge bg-gray border border-gray mr-3 fw-regular fs-13">
+                                                                    [named hyperlinks] (https://example.com)</div>
+                                                                <div class="mr-3 fw-bold fs-13">**bold**</div>
+                                                                <div class="mr-3 font-italic fs-13">_italic_</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-12 -->
+                                                <div class="col-lg-12">
+                                                    <div
+                                                        class="input-box d-flex flex-wrap align-items-center justify-content-between">
+                                                        <div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="getNewCommentsTwo">
+                                                                <label
+                                                                    class="custom-control-label custom--control-label"
+                                                                    for="getNewCommentsTwo">Notify me of new comments
+                                                                    vai email.</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="getNewPostsTwo">
+                                                                <label
+                                                                    class="custom-control-label custom--control-label"
+                                                                    for="getNewPostsTwo">Notify me of new posts vai
+                                                                    email.</label>
+                                                            </div>
+                                                        </div>
+                                                        <button
+                                                            class="btn theme-btn theme-btn-sm theme-btn-outline theme-btn-outline-gray"
+                                                            type="submit">Post Comment</button>
+                                                    </div>
+                                                </div><!-- end col-lg-12 -->
+                                            </form>
+                                        </div><!-- end collapse -->
+                                    </div>
+                                </div><!-- end comments-wrap -->
+                            </div><!-- end answer-body-wrap -->
+                        </div><!-- end answer-wrap -->
+                    @endforeach
                     <div class="subheader">
                         <div class="subheader-title">
                             <h3 class="fs-16">Your Answer</h3>
                         </div><!-- end subheader-title -->
                     </div><!-- end subheader -->
                     <div class="post-form">
-                        <form method="post" class="pt-3">
+                        <form method="post" action="{{ route('questions.answer') }}" class="pt-3">
+                            @csrf
+                            <input type="hidden" name="question_id" value="{{ $question->id }}">
                             <div class="input-box">
                                 <label class="fs-14 text-black lh-20 fw-medium">Body</label>
                                 <div class="form-group">
                                     <textarea
                                         class="form-control form--control form-control-sm fs-13 user-text-editor"
-                                        name="message" rows="6"
-                                        placeholder="Your answer here...">Your answer here...</textarea>
+                                        rows="6" name="body"
+                                        placeholder="Your answer here...">
+                                    </textarea>
                                 </div>
                             </div>
-                            <div class="input-box">
-                                <label class="fs-14 text-black fw-medium">Image</label>
-                                <div class="form-group">
-                                    <div class="file-upload-wrap file-upload-layout-2">
-                                        <input type="file" name="files[]" class="file-upload-input" multiple>
-                                        <span
-                                            class="file-upload-text d-flex align-items-center justify-content-center"><i
-                                                class="la la-cloud-upload mr-2 fs-24"></i>Drop files here or click
-                                            to upload.</span>
-                                    </div>
-                                </div>
-                            </div><!-- end input-box -->
                             <button class="btn theme-btn theme-btn-sm" type="submit">Post Your Answer</button>
                         </form>
                     </div>

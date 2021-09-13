@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\UserController;
 use App\Models\Question;
@@ -32,3 +33,4 @@ Route::resource('questions', QuestionController::class,['except' => [
     'show'
 ]]);
 Route::get('/questions/{slug}', [QuestionController::class, 'show'])->name('questions.show');
+Route::post('/questions/answer', [AnswerController::class, 'store'])->name('questions.answer');
