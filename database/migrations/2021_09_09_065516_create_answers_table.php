@@ -17,10 +17,11 @@ class CreateAnswersTable extends Migration
             $table->id();
             $table->longText('body');
             $table->integer('votes_count')->default(0);
+            $table->boolean('answers_accepted')->default(false);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('answer_id');
-            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
+            $table->unsignedBigInteger('question_id');
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->timestamps();
         });
     }
